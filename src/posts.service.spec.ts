@@ -15,12 +15,12 @@ describe('PostsService', () => {
 	it('should add a new post', () => {
     const newPost = postsService.create(post);
 
-		expect(postsService.find('2')).toEqual(newPost);
+		expect(postsService.find(newPost.id)).toEqual(newPost);
 	});
 
 	it('should find a post', () => {
     const newPost = postsService.create({text: 'Some new post'});
     
-    expect(postsService.find('2')).toEqual(newPost);
+    expect(postsService.find(newPost.id)).toEqual(newPost);
 	});
 });
