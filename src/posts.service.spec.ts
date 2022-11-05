@@ -25,10 +25,6 @@ describe('PostsService', () => {
 	it('should find a post', () => {
     const newPost = postsService.create({text: 'Some new post'});
     
-    expect(postsService.find(newPost.id)).toMatchObject({
-      id: expect.any(String),
-      text: expect.any(String),
-      date: expect.any(String),
-    });
+    expect(postsService.find(newPost.id)).toEqual(newPost);
 	});
 });
